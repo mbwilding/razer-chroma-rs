@@ -11,6 +11,7 @@ mod bindings_raw {
 }
 
 use bindings_raw::root as bindings;
+use std::fmt;
 
 pub struct SDK;
 
@@ -45,9 +46,18 @@ impl Color {
     }
 }
 
+#[derive(Debug)]
 pub struct Error {
     pub code: bindings::RZRESULT,
 }
+
+impl fmt::Display for Error {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Error with code: {}", self.code)
+    }
+}
+
+impl std::error::Error for Error {}
 
 pub enum ChromaLinkEffect {
     Static {
