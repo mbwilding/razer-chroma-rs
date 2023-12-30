@@ -1,6 +1,6 @@
 [package]
 name = "razer_chroma"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2018"
 build = "build.rs"
 description = "The razer_chroma crate provides Razer Chroma SDK functionality in a safe and simple API."
@@ -11,7 +11,7 @@ authors = ["Chris Brown"]
 [build-dependencies]
 # We're very permissive here with bindgen due to https://github.com/rust-lang/cargo/issues/5237
 bindgen = "0.*"
-cc = "1.0.36"
+cc = "1.0"
 
 [dependencies]
-arraymap = "0.1.1"
+arraymap = "0.1"
